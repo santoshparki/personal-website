@@ -113,4 +113,17 @@ if ("IntersectionObserver" in window && eduCards.length > 0) {
     card.classList.add("show");
   });
 }
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show-menu");
+
+    const icon = menuToggle.querySelector("i");
+    icon.className = navLinks.classList.contains("show-menu")
+      ? "fa-solid fa-xmark"
+      : "fa-solid fa-bars";
+  });
+}
 
