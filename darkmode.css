@@ -1,0 +1,82 @@
+.dark {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.dark .about-section,
+.dark .skills-section,
+.dark .education-section,
+.dark .projects-section,
+.dark .contact-section {
+  background: #1f2937;
+}
+
+.dark .about-box,
+.dark .highlight-card,
+.dark .skill-card,
+.dark .project-card,
+.dark .education-card,
+.dark .contact-info-card,
+.dark .contact-form {
+  background: #273549;
+  color: white;
+}
+
+.dark .about-text,
+.dark .highlight-card p,
+.dark .skill-card p,
+.dark .project-card p,
+.dark .contact-info-card p {
+  color: #e5e7eb;
+}
+
+.dark .highlight-card h3,
+.dark .education-card h3,
+.dark .project-card h3,
+.dark .section-title h2 {
+  color: #60a5fa;
+}
+
+.dark .education-card.highlight h3,
+.dark .education-card.highlight p {
+  color: white;
+}
+
+.dark .year {
+  color: #cbd5e1;
+}
+
+.dark .contact-subtitle {
+  color: #cbd5e1;
+}
+
+.dark .contact-info-card h3,
+.dark .form-group label {
+  color: #f8fafc;
+}
+
+.dark .form-group input,
+.dark .form-group textarea {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.dark .form-group input::placeholder,
+.dark .form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.dark .social-links a {
+  background: rgba(96, 165, 250, 0.14);
+  color: #93c5fd;
+}
+
+.dark .social-links a:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.dark footer {
+  background: #020617;
+}
