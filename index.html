@@ -27,23 +27,25 @@
 <body>
   <!-- HERO / HEADER -->
   <header class="hero" id="home">
-    <nav class="navbar">
-      <div class="logo logo-badge">SP</div>
+ <nav class="navbar">
+  <div class="logo logo-badge">SP</div>
+
   <button class="menu-toggle" id="menuToggle" aria-label="Open menu" type="button">
     <i class="fa-solid fa-bars"></i>
   </button>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-item">About</a></li>
-        <li><a href="#skills" class="nav-item">Skills</a></li>
-        <li><a href="#education" class="nav-item">Education</a></li>
-        <li><a href="#projects" class="nav-item">Projects</a></li>
-        <li><a href="#contact" class="nav-item">Contact</a></li>
-      </ul>
 
-      <button id="themeBtn" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-        🌙
-      </button>
-    </nav>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" class="nav-item">About</a></li>
+    <li><a href="#skills" class="nav-item">Skills</a></li>
+    <li><a href="#education" class="nav-item">Education</a></li>
+    <li><a href="#projects" class="nav-item">Projects</a></li>
+    <li><a href="#contact" class="nav-item">Contact</a></li>
+  </ul>
+
+  <button id="themeBtn" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+    🌙
+  </button>
+</nav>
 
     <div class="hero-content">
       <div class="hero-text">
@@ -123,67 +125,130 @@
       </div>
     </div>
   </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section skills-section">
-    <h2 class="section-title">My Skills</h2>
-
-    <div class="skills-container">
-      <div class="skill-card" data-skill="html">
-        <div class="skill-icon">🌐</div>
-        <h3>HTML</h3>
-        <p>Semantic and structured web pages</p>
-      </div>
-
-      <div class="skill-card" data-skill="css">
-        <div class="skill-icon">🎨</div>
-        <h3>CSS</h3>
-        <p>Responsive layouts and modern styling</p>
-      </div>
-
-      <div class="skill-card" data-skill="javascript">
-        <div class="skill-icon">⚡</div>
-        <h3>JavaScript</h3>
-        <p>Interactive and dynamic web features</p>
-      </div>
-
-      <div class="skill-card" data-skill="wordpress">
-        <div class="skill-icon">🧩</div>
-        <h3>WordPress</h3>
-        <p>Customizing and building websites</p>
-      </div>
-
-      <div class="skill-card" data-skill="github">
-        <div class="skill-icon">🐙</div>
-        <h3>GitHub</h3>
-        <p>Version control and project hosting</p>
-      </div>
-
-      <div class="skill-card" data-skill="responsive">
-        <div class="skill-icon">📱</div>
-        <h3>Responsive Design</h3>
-        <p>Mobile-friendly and adaptive UI</p>
-      </div>
-
-      <div class="skill-card" data-skill="java">
-        <div class="skill-icon">☕</div>
-        <h3>Java</h3>
-        <p>Object-oriented programming basics</p>
-      </div>
-
-      <div class="skill-card" data-skill="python">
-        <div class="skill-icon">🐍</div>
-        <h3>Python</h3>
-        <p>Programming and problem solving</p>
-      </div>
-
-      <div class="skill-card" data-skill="mysql">
-        <div class="skill-icon">🗄️</div>
-        <h3>MySQL</h3>
-        <p>Database queries and data handling</p>
-      </div>
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>My Skills</h2>
+      <p>Technologies and tools I work with</p>
     </div>
-  </section>
+
+    <div class="skills-tabs">
+      <button class="tab-btn active" data-category="frontend">Frontend</button>
+      <button class="tab-btn" data-category="backend">Backend</button>
+      <button class="tab-btn" data-category="dbms">DBMS</button>
+      <button class="tab-btn" data-category="ai">AI</button>
+    </div>
+
+    <div class="skills-display">
+
+      <!-- Frontend -->
+      <div class="skills-group active" id="frontend">
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h4>HTML</h4>
+            <p>Semantic and structured web pages</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h4>CSS</h4>
+            <p>Responsive layouts and modern styling</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h4>JavaScript</h4>
+            <p>Interactive and dynamic web features</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">📱</div>
+            <h4>Responsive Design</h4>
+            <p>Mobile-friendly and adaptive UI</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skills-group" id="backend">
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">🧩</div>
+            <h4>WordPress</h4>
+            <p>Customizing and building websites</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🧱</div>
+            <h4>ACF</h4>
+            <p>Advanced Custom Fields for dynamic content</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">📂</div>
+            <h4>CPT</h4>
+            <p>Custom Post Types for structured content</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
+            <h4>Dynamic Pages</h4>
+            <p>Building scalable dynamic templates</p>
+          </div>
+              <div class="skill-card">
+  <div class="skill-icon">☕</div>
+  <h4>Java</h4>
+  <p>Object-oriented programming and backend logic</p>
+</div>
+        </div>
+      </div>
+  
+
+      <!-- DBMS -->
+      <div class="skills-group" id="dbms">
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <h4>MySQL</h4>
+            <p>Database queries and data handling</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="skills-group" id="ai">
+        <div class="skills-container">
+          <div class="skill-card">
+            <div class="skill-icon">🐍</div>
+            <h4>Python</h4>
+            <p>Programming and problem solving</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🤖</div>
+            <h4>Machine Learning</h4>
+            <p>Basic predictive modeling and analysis</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🧠</div>
+            <h4>AI Concepts</h4>
+            <p>Interest in artificial intelligence systems</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon">🐙</div>
+            <h4>GitHub</h4>
+            <p>Version control and project hosting</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- EDUCATION -->
   <section id="education" class="section education-section">
@@ -216,103 +281,104 @@
       </div>
     </div>
   </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section projects-section">
-    <h2 class="section-title">My Projects</h2>
-
-    <div class="projects-filter-info" id="projectsFilterInfo"></div>
-
-    <div class="projects-container">
-      <div class="project-card" data-skills="html css javascript responsive github">
-        <h3>Portfolio Website</h3>
-        <p>
-          A personal portfolio website built with HTML, CSS, JavaScript, and responsive design.
-        </p>
-        <div class="project-links">
-          <a class="project-link" href="#home">
-            <i class="fa-solid fa-globe"></i> Live Preview
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" data-skills="wordpress responsive css">
-        <h3>United Car Removal Staging 5</h3>
-        <p>
-          A WordPress staging website project focused on layout design, styling, and responsive presentation.
-        </p>
-        <div class="project-links">
-          <a class="project-link" href="https://unitedcarremoval.com.au/staging5/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-up-right-from-square"></i> View Project
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" data-skills="wordpress responsive css">
-        <h3>United Car Removal Staging 7</h3>
-        <p>
-          Another WordPress staging project used for website practice, structure updates, and interface improvement.
-        </p>
-        <div class="project-links">
-          <a class="project-link" href="https://unitedcarremoval.com.au/staging7/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-up-right-from-square"></i> View Project
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" data-skills="python github">
-        <h3>Stock Price Prediction</h3>
-        <p>
-          A machine learning based project related to stock price prediction using Python.
-        </p>
-        <div class="project-links">
-          <a class="project-link" href="https://github.com/santoshparki/Stockprice-prediction" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card" data-skills="python mysql">
-        <h3>Student Management Project</h3>
-        <p>
-          A project using Python and MySQL for storing and managing student data.
-        </p>
-        <div class="project-links">
-          <span class="project-link disabled-link">
-            <i class="fa-solid fa-code"></i> Academic Project
-          </span>
-        </div>
-      </div>
-
-      <div class="project-card" data-skills="java">
-        <h3>Java Mini Project</h3>
-        <p>
-          A simple Java-based academic project to practice logic and object-oriented programming.
-        </p>
-        <div class="project-links">
-          <span class="project-link disabled-link">
-            <i class="fa-solid fa-code"></i> Academic Project
-          </span>
-        </div>
-      </div>
-
-      <div class="project-card" data-skills="python github">
-        <h3>Published Research Paper</h3>
-        <p>
-          A research paper published on IEEE Xplore, reflecting my academic and technical research interest.
-        </p>
-        <div class="project-links">
-          <a class="project-link" href="https://ieeexplore.ieee.org/abstract/document/10306948" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-file-lines"></i> View Paper
-          </a>
-        </div>
-      </div>
+<!-- Project -->
+<!-- Project -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>My Projects</h2>
+      <p>Here are some of my recent works</p>
     </div>
 
-    <div class="projects-actions">
-      <button id="showAllProjects" class="btn btn-primary" type="button">Show All Projects</button>
+    <div class="projects-controls">
+      <button id="showAllProjects" class="active">All Projects</button>
     </div>
-  </section>
+
+    <p id="projectsFilterInfo" class="filter-info">Showing all projects</p>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card" data-skills="html css js responsive">
+        <div class="project-image">
+          <img src="project1.png" alt="Portfolio Website">
+        </div>
+        <div class="project-content">
+          <h3>Personal Portfolio</h3>
+          <p>
+            A modern and responsive portfolio website to showcase my skills,
+            projects, education, and contact information.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive</span>
+          </div>
+
+          <div class="project-buttons">
+            <a href="#" target="_blank" class="btn live-btn">Live Demo</a>
+            <a href="#" target="_blank" class="btn github-btn">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" data-skills="wordpress acf cpt dynamic responsive">
+        <div class="project-image">
+          <img src="project2.png" alt="United Car Removal Website">
+        </div>
+        <div class="project-content">
+          <h3>United Car Removal</h3>
+          <p>
+            A dynamic WordPress website built with custom post types, ACF fields,
+            and dynamic page templates to manage content in a flexible and scalable way.
+          </p>
+
+          <div class="project-tags">
+            <span>WordPress</span>
+            <span>ACF</span>
+            <span>CPT</span>
+            <span>Dynamic Pages</span>
+          </div>
+
+          <div class="project-buttons">
+            <a href="https://unitedcarremoval.com.au/staging5/" target="_blank" class="btn live-btn">Live Demo</a>
+            <a href="#" target="_blank" class="btn github-btn">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" data-skills="python ml ai stock research data">
+        <div class="project-image">
+          <img src="project3.png" alt="Stock Price Prediction Project">
+        </div>
+        <div class="project-content">
+          <h3>Stock Price Prediction</h3>
+          <p>
+            Developed a stock price prediction project using Python and machine learning
+            techniques to analyze historical data and forecast possible market trends.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>AI</span>
+            <span>Research</span>
+          </div>
+
+          <div class="project-buttons">
+            <a href="https://github.com/santoshparki/Stockprice-prediction" target="_blank" class="btn github-btn">GitHub</a>
+            <a href="https://ieeexplore.ieee.org/abstract/document/10306948" target="_blank" class="btn live-btn">Research Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT -->
  <!-- CONTACT -->
