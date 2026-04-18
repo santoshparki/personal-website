@@ -1,0 +1,140 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: linear-gradient(90deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.96));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+  border-bottom: 1px solid rgba(250, 204, 21, 0.18);
+  padding: 14px 60px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.logo-badge {
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-12px);
+  animation: navFadeDown 0.7s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.logo-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(250, 204, 21, 0.18),
+    rgba(96, 165, 250, 0.18)
+  );
+  z-index: -1;
+}
+
+.logo-badge::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(250, 204, 21, 0.22);
+  border-radius: 50%;
+  top: -12px;
+  right: -10px;
+  filter: blur(8px);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #facc15;
+}
+
+.nav-item {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-12px);
+  animation: navFadeDown 0.6s ease forwards;
+}
+
+.nav-links li:nth-child(1) .nav-item { animation-delay: 0.4s; }
+.nav-links li:nth-child(2) .nav-item { animation-delay: 0.55s; }
+.nav-links li:nth-child(3) .nav-item { animation-delay: 0.7s; }
+.nav-links li:nth-child(4) .nav-item { animation-delay: 0.85s; }
+.nav-links li:nth-child(5) .nav-item { animation-delay: 1s; }
+
+.theme-toggle {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #111827;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px rgba(250, 204, 21, 0.35);
+}
+
+.menu-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes navFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
