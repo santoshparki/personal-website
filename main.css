@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 100px 60px;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #475569;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  padding: 15px 28px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #111827;
+  box-shadow: 0 12px 28px rgba(250, 204, 21, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(250, 204, 21, 0.5);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.8px solid rgba(255, 255, 255, 0.28);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #ffffff, #dbeafe);
+  color: #1e3a8a;
+  border-color: transparent;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 34px rgba(255, 255, 255, 0.22);
+}
+
+.btn-light {
+  background: linear-gradient(135deg, #e2e8f0, #ffffff);
+  color: #1e3a8a;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.btn-light:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: white;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

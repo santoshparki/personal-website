@@ -1,0 +1,227 @@
+@media (max-width: 992px) {
+  .navbar {
+    padding: 16px 30px;
+  }
+
+  .navbar.scrolled {
+    padding: 13px 30px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    margin: 24px auto 0;
+  }
+
+  .education-container::before {
+    display: none;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .navbar {
+    padding: 14px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar.scrolled {
+    padding: 12px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.98);
+    border-radius: 16px;
+    padding: 12px;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s;
+  }
+
+  .nav-links.show-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero {
+    padding: 140px 25px 70px;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .desc {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    max-width: 290px;
+  }
+
+  .hero-image::before {
+    top: -14px;
+    left: -14px;
+  }
+
+  .main-img {
+    height: 340px;
+  }
+
+  .grad-card {
+    width: 118px;
+    right: -10px;
+    bottom: -18px;
+  }
+
+  .grad-card p {
+    font-size: 11px;
+  }
+
+  .about-box {
+    padding: 25px;
+  }
+
+  .about-text {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .skills-section {
+    padding: 80px 0;
+  }
+
+  .skills-section .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .education-container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .education-card {
+    max-width: 100%;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .education-card::before {
+    display: none;
+  }
+
+  .projects-section {
+    padding: 80px 0;
+  }
+
+  .projects-section .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .project-content {
+    padding: 18px;
+  }
+
+  .project-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  .contact-subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .contact-info-card,
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .contact-info-card h3 {
+    font-size: 22px;
+  }
+
+  .contact-info-card p {
+    font-size: 16px;
+  }
+
+  .social-links a {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
