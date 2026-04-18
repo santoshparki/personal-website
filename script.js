@@ -6,8 +6,13 @@ const projectsSection = document.getElementById("projects");
 const projectsFilterInfo = document.getElementById("projectsFilterInfo");
 const showAllProjectsBtn = document.getElementById("showAllProjects");
 const eduCards = document.querySelectorAll(".education-card");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const navItems = document.querySelectorAll("#navLinks a");
 
-/* Theme toggle */
+/* =========================
+   Theme Toggle
+========================= */
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
@@ -15,7 +20,9 @@ if (themeBtn) {
   });
 }
 
-/* Navbar scroll effect */
+/* =========================
+   Navbar Scroll Effect
+========================= */
 function handleNavbarScroll() {
   if (!navbar) return;
 
@@ -29,16 +36,77 @@ function handleNavbarScroll() {
 window.addEventListener("scroll", handleNavbarScroll);
 handleNavbarScroll();
 
-/* Reset project filter */
-function resetProjects() {
+/* =========================
+   Project Filter Functions
+========================= */
+function updateFilterInfo(message) {
+  if (projectsFilterInfo) {
+    projectsFilterInfo.textContent = message;
+  }
+}
+
+function clearSkillActiveState() {
+  skillCards.forEach((item) => item.classList.remove("active-skill"));
+}
+
+function showProject(project) {
+  project.classList.remove("hidden");
+  project.classList.add("active-project");
+}
+
+function hideProject(project) {
+  project.classList.add("hidden");
+  project.classList.remove("active-project");
+}
+
+function showAllProjects() {
   projectCards.forEach((project) => {
-    project.classList.remove("hidden", "active-project");
+    project.classList.remove("hidden");
+    project.classList.remove("active-project");
   });
 
-  skillCards.forEach((item) => item.classList.remove("active-skill"));
+  clearSkillActiveState();
 
-  if (projectsFilterInfo) {
-    projectsFilterInfo.textContent = "";
+  if (showAllProjectsBtn) {
+    showAllProjectsBtn.classList.add("active");
+  }
+
+  updateFilterInfo("Showing all projects");
+}
+
+function filterProjectsBySkill(selectedSkill, clickedCard) {
+  let matchFound = false;
+
+  projectCards.forEach((project) => {
+    const skillsText = project.dataset.skills?.toLowerCase().trim() || "";
+    const skills = skillsText.split(/\s+/).filter(Boolean);
+
+    if (skills.includes(selectedSkill)) {
+      showProject(project);
+      matchFound = true;
+    } else {
+      hideProject(project);
+    }
+  });
+
+  clearSkillActiveState();
+  clickedCard.classList.add("active-skill");
+
+  if (showAllProjectsBtn) {
+    showAllProjectsBtn.classList.remove("active");
+  }
+
+  updateFilterInfo(
+    matchFound
+      ? `Showing projects using ${selectedSkill.toUpperCase()}`
+      : `No projects found for ${selectedSkill.toUpperCase()}`
+  );
+
+  if (projectsSection) {
+    projectsSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   }
 }
 
@@ -46,50 +114,23 @@ function resetProjects() {
 skillCards.forEach((card) => {
   card.addEventListener("click", () => {
     const selectedSkill = card.dataset.skill?.trim().toLowerCase();
-
     if (!selectedSkill) return;
 
-    skillCards.forEach((item) => item.classList.remove("active-skill"));
-    card.classList.add("active-skill");
-
-    let matchFound = false;
-
-    projectCards.forEach((project) => {
-      const skillsText = project.dataset.skills?.toLowerCase() || "";
-      const skills = skillsText.split(/\s+/).filter(Boolean);
-
-      project.classList.remove("active-project");
-
-      if (skills.includes(selectedSkill)) {
-        project.classList.remove("hidden");
-        project.classList.add("active-project");
-        matchFound = true;
-      } else {
-        project.classList.add("hidden");
-      }
-    });
-
-    if (projectsFilterInfo) {
-      projectsFilterInfo.textContent = matchFound
-        ? `Showing projects using ${selectedSkill.toUpperCase()}`
-        : `No projects found for ${selectedSkill.toUpperCase()}`;
-    }
-
-    if (projectsSection) {
-      projectsSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
+    filterProjectsBySkill(selectedSkill, card);
   });
 });
 
 /* Show all projects button */
 if (showAllProjectsBtn) {
-  showAllProjectsBtn.addEventListener("click", resetProjects);
+  showAllProjectsBtn.addEventListener("click", showAllProjects);
 }
 
-/* Education scroll animation */
+/* Run on load */
+showAllProjects();
+
+/* =========================
+   Education Scroll Animation
+========================= */
 if ("IntersectionObserver" in window && eduCards.length > 0) {
   const educationObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -113,17 +154,50 @@ if ("IntersectionObserver" in window && eduCards.length > 0) {
     card.classList.add("show");
   });
 }
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
 
+/* =========================
+   Mobile Menu Toggle
+========================= */
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("show-menu");
 
     const icon = menuToggle.querySelector("i");
-    icon.className = navLinks.classList.contains("show-menu")
-      ? "fa-solid fa-xmark"
-      : "fa-solid fa-bars";
+    if (icon) {
+      icon.className = navLinks.classList.contains("show-menu")
+        ? "fa-solid fa-xmark"
+        : "fa-solid fa-bars";
+    }
+  });
+
+  /* Close menu after clicking link */
+  navItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show-menu");
+
+      const icon = menuToggle.querySelector("i");
+      if (icon) {
+        icon.className = "fa-solid fa-bars";
+      }
+    });
   });
 }
+const tabButtons = document.querySelectorAll(".tab-btn");
+const skillGroups = document.querySelectorAll(".skills-group");
 
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetCategory = button.dataset.category;
+
+    tabButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    skillGroups.forEach((group) => {
+      group.classList.remove("active");
+
+      if (group.id === targetCategory) {
+        group.classList.add("active");
+      }
+    });
+  });
+});
