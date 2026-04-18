@@ -201,3 +201,21 @@ tabButtons.forEach((button) => {
     });
   });
 });
+const fadeElements = document.querySelectorAll(".scroll-fade");
+
+if ("IntersectionObserver" in window && fadeElements.length > 0) {
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  fadeElements.forEach((el) => fadeObserver.observe(el));
+} else {
+  fadeElements.forEach((el) => el.classList.add("visible"));
+}
